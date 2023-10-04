@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
+
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,9 +18,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <header>hello</header>
+      <header className="flex justify-between p-3">
+        <h1 className="font-bold text-4xl">Eunlog</h1>
+        <div
+          className="flex gap-x-3 items-center font-bold text-1xl"
+          style={{ color: "#535F70" }}
+        >
+          <Link href={"/"}>Home</Link>
+          <Link href={"/about"}>About</Link>
+          <Link href={"/posts"}>Posts</Link>
+          <Link href={"/contact"}>Contact</Link>
+        </div>
+      </header>
       <body className={inter.className}>{children}</body>
-      <footer>hello</footer>
     </html>
   );
 }
