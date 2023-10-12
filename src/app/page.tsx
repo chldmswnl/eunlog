@@ -69,7 +69,7 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div className="flex flex-col w-full pr-10 pl-10 gap-y-10">
+      <div className="flex flex-col w-full pr-10 pl-10 gap-y-10 mb-10">
         <span className="font-bold text-3xl">Featured posts</span>
         <div className="grid grid-cols-3 gap-x-5 gap-y-5">
           {data.map(({ id, title, subTitle, date, img, category }) => (
