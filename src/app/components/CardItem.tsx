@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface CardItemProps {
   itemData: {
@@ -13,12 +16,14 @@ interface CardItemProps {
 }
 
 const CardItem = ({ itemData, carousel }: CardItemProps) => {
-  const { img, date, category, title, subTitle } = itemData;
+  const { img, date, category, title, subTitle, id } = itemData;
+  const router = useRouter();
   return (
     <div
-      className={`shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] ${
+      className={`cursor-pointer shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] ${
         carousel && "mr-5"
       }`}
+      onClick={() => router.push(`/posts/${id}`)}
     >
       <div className="w-full h-1/2">
         <Image

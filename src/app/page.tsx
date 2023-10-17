@@ -22,7 +22,7 @@ export default function Home() {
       category: "tech",
     },
     {
-      id: 1,
+      id: 2,
       title: "hello",
       subTitle: "ddd",
       date: "2023-10-05",
@@ -30,7 +30,7 @@ export default function Home() {
       category: "tech",
     },
     {
-      id: 1,
+      id: 3,
       title: "hello",
       subTitle: "ddd",
       date: "2023-10-05",
@@ -38,7 +38,7 @@ export default function Home() {
       category: "tech",
     },
     {
-      id: 1,
+      id: 4,
       title: "hello",
       subTitle: "ddd",
       date: "2023-10-05",
@@ -46,7 +46,7 @@ export default function Home() {
       category: "tech",
     },
     {
-      id: 1,
+      id: 5,
       title: "hello",
       subTitle: "ddd",
       date: "2023-10-05",
