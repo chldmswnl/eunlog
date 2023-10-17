@@ -9,51 +9,13 @@ export interface HomeData {
   date: string;
   category: string;
   img: string;
+  markdown: string;
 }
 
-export default function Home() {
-  const data: HomeData[] = [
-    {
-      id: 1,
-      title: "hello",
-      subTitle: "ddd",
-      date: "2023-10-05",
-      img: "/profile.jpg",
-      category: "tech",
-    },
-    {
-      id: 2,
-      title: "hello",
-      subTitle: "ddd",
-      date: "2023-10-05",
-      img: "/profile.jpg",
-      category: "tech",
-    },
-    {
-      id: 3,
-      title: "hello",
-      subTitle: "ddd",
-      date: "2023-10-05",
-      img: "/profile.jpg",
-      category: "tech",
-    },
-    {
-      id: 4,
-      title: "hello",
-      subTitle: "ddd",
-      date: "2023-10-05",
-      img: "/profile.jpg",
-      category: "tech",
-    },
-    {
-      id: 5,
-      title: "hello",
-      subTitle: "ddd",
-      date: "2023-10-05",
-      img: "/profile.jpg",
-      category: "tech",
-    },
-  ];
+export default async function Home() {
+  const res = await fetch(`http://localhost:3000/api/post`);
+  const data = await res.json();
+  console.log(data);
   return (
     <section>
       <div className="flex w-full justify-center mb-10">
@@ -76,7 +38,7 @@ export default function Home() {
       <div className="flex flex-col w-full px-10 py-5 gap-y-10">
         <span className="font-bold text-3xl">Featured posts</span>
         <div className="grid grid-cols-3 gap-x-5 gap-y-5">
-          {data.map((item) => (
+          {data.map((item: HomeData) => (
             <CardItem itemData={item} key={item.id} />
           ))}
         </div>
