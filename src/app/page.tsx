@@ -1,6 +1,7 @@
 import Image from "next/image";
 import CardItem from "./components/CardItem";
 import CarouselSection from "./components/CarouselSection";
+import Link from "next/link";
 
 export interface HomeData {
   id: number;
@@ -15,7 +16,7 @@ export interface HomeData {
 export default async function Home() {
   const res = await fetch(`http://localhost:3000/api/post`);
   const data = await res.json();
-  console.log(data);
+
   return (
     <section>
       <div className="flex w-full justify-center mb-10">
@@ -30,9 +31,12 @@ export default async function Home() {
           <span className="font-bold text-xl">
             Front-end developer in Korea
           </span>
-          <button className="p-2 bg-amber-500 text-white font-semibold rounded-xl">
+          <Link
+            href={"/contact"}
+            className="p-2 bg-amber-500 text-white font-semibold rounded-xl"
+          >
             Contact me
-          </button>
+          </Link>
         </div>
       </div>
       <div className="flex flex-col w-full px-10 py-5 gap-y-10">
