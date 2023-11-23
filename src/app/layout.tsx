@@ -6,6 +6,8 @@ const sans = Open_Sans({ subsets: ["latin"] });
 
 import "./globals.css";
 import Head from "next/head";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,25 +21,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={sans.className}>
-      <body>
-        <header className="flex justify-between p-3">
-          <h1 className="font-bold text-4xl">Eunlog</h1>
-          <div
-            className="flex gap-x-3 items-center font-bold text-1xl"
-            style={{ color: "#535F70" }}
-          >
-            <Link href={"/"}>Home</Link>
-            <Link href={"/about"}>About</Link>
-            <Link href={"/posts"}>Posts</Link>
-            <Link href={"/contact"}>Contact</Link>
-          </div>
-        </header>
-        {children}
-        <footer className="h-24 bg-stone-200 flex items-end p-5">
-          <span className="font-bold text-neutral-400">
-            Eunji choi, All rights reserved
-          </span>
-        </footer>
+      <body className="flex flex-col w-full max-w-screen-2xl mx-auto">
+        <Header />
+        <main className="grow">{children}</main>
+        <Footer />
       </body>
     </html>
   );
