@@ -2,6 +2,7 @@ import Image from "next/image";
 import CardItem from "./components/CardItem";
 import CarouselSection from "./components/CarouselSection";
 import Link from "next/link";
+import Hero from "@/components/Hero";
 
 export interface HomeData {
   id: number;
@@ -18,27 +19,8 @@ export default async function Home() {
   const data = await res.json();
 
   return (
-    <section>
-      <div className="flex w-full justify-center mb-10">
-        <div className="flex flex-col items-center gap-y-2">
-          <Image
-            src={"/profile.jpg"}
-            alt={"profile image"}
-            width={300}
-            height={200}
-          />
-          <span className="font-bold text-2xl">{"Hello, I'm Eunji 🚀"}</span>
-          <span className="font-bold text-xl">
-            Front-end developer in Korea
-          </span>
-          <Link
-            href={"/contact"}
-            className="p-2 bg-amber-500 text-white font-semibold rounded-xl"
-          >
-            Contact me
-          </Link>
-        </div>
-      </div>
+    <>
+      <Hero />
       <div className="flex flex-col w-full px-10 py-5 gap-y-10">
         <span className="font-bold text-3xl">Featured posts</span>
         <div className="grid grid-cols-3 gap-x-5 gap-y-5">
@@ -51,6 +33,6 @@ export default async function Home() {
         <span className="font-bold text-3xl">You may like</span>
         <CarouselSection />
       </div>
-    </section>
+    </>
   );
 }
