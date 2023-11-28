@@ -1,7 +1,7 @@
 "use client";
 
 import Carousel from "react-multi-carousel";
-import CardItem from "./CardItem";
+import CardItem from "../../components/CardItem";
 import "react-multi-carousel/lib/styles.css";
 
 export interface HomeData {

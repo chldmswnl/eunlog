@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const Hero = () => {
+export default function Hero() {
   return (
     <section className="flex w-full justify-center mb-10">
       <div className="flex flex-col items-center gap-y-2">
@@ -24,6 +24,6 @@ const Hero = () => {
       </div>
     </section>
   );
-};
+}
 
-export default Hero;
+
