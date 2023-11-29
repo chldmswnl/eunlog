@@ -4,58 +4,7 @@ import Carousel from "react-multi-carousel";
 import CardItem from "../../components/CardItem";
 import "react-multi-carousel/lib/styles.css";
 
-export interface HomeData {
-  id: number;
-  title: string;
-  subTitle: string;
-  date: string;
-  category: string;
-  img: string;
-}
-
 const CarouselSection = () => {
-  const data: HomeData[] = [
-    {
-      id: 1,
-      title: "hello",
-      subTitle: "ddd",
-      date: "2023-10-05",
-      img: "/profile.jpg",
-      category: "tech",
-    },
-    {
-      id: 1,
-      title: "hello",
-      subTitle: "ddd",
-      date: "2023-10-05",
-      img: "/profile.jpg",
-      category: "tech",
-    },
-    {
-      id: 1,
-      title: "hello",
-      subTitle: "ddd",
-      date: "2023-10-05",
-      img: "/profile.jpg",
-      category: "tech",
-    },
-    {
-      id: 1,
-      title: "hello",
-      subTitle: "ddd",
-      date: "2023-10-05",
-      img: "/profile.jpg",
-      category: "tech",
-    },
-    {
-      id: 1,
-      title: "hello",
-      subTitle: "ddd",
-      date: "2023-10-05",
-      img: "/profile.jpg",
-      category: "tech",
-    },
-  ];
   return (
     <Carousel
       ssr
@@ -76,9 +25,7 @@ const CarouselSection = () => {
         },
       }}
     >
-      {data.map((item) => (
-        <CardItem itemData={item} key={item.id} carousel />
-      ))}
+      <span></span>
     </Carousel>
   );
 };
