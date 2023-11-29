@@ -1,51 +1,34 @@
-"use client";
-
+import { Post } from "@/service/posts";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
-interface CardItemProps {
-  itemData: {
-    id: number;
-    img: string;
-    date: string;
-    title: string;
-    subTitle: string;
-    category: string;
-  };
-  carousel?: boolean;
-}
-
-const CardItem = ({ itemData, carousel }: CardItemProps) => {
-  const { img, date, category, title, subTitle, id } = itemData;
-  const router = useRouter();
+const CardItem = ({ post }: { post: Post }) => {
+  if (!post) return <div></div>;
+  const { title, description, path, category, date } = post;
   return (
-    <div
-      className={`cursor-pointer shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] ${
-        carousel && "mr-5"
-      }`}
-      onClick={() => router.push(`/posts/${id}`)}
-    >
-      <div className="w-full h-1/2">
+    <Link href={`/posts/${path}`}>
+      <article className="rounded-md shadow-lg">
         <Image
-          src={img}
+          src={`/images/posts/${path}.png`}
           alt={"thumbnail image"}
-          width={0}
-          height={0}
-          sizes="100vw"
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          width={300}
+          height={200}
+          className="w-full"
         />
-      </div>
-      <div className="flex flex-col items-center p-3 w-full h-1/2">
-        <div className="my-2 w-full flex justify-end">
-          <span>{date}</span>
+        <div className="flex flex-col items-center p-4">
+          <time className="self-end font-semibold">{date.toString()}</time>
+          <h3 className="font-bold text-xl mt-3 w-full truncate text-center">
+            {title}
+          </h3>
+          <span className="font-semibold mb-3 w-full truncate text-center">
+            {description}
+          </span>
+          <span className=" bg-amber-600 text-white px-2 rounded-lg">
+            {category}
+          </span>
         </div>
-        <span className="font-bold text-2xl">{title}</span>
-        <span className="font-semibold text-xl mb-3">{subTitle}</span>
-        <span className=" bg-amber-600 text-white px-2 rounded-lg">
-          {category}
-        </span>
-      </div>
-    </div>
+      </article>
+    </Link>
   );
 };
 
