@@ -1,15 +1,17 @@
 "use client";
 
+import { Post } from "@/service/posts";
 import Carousel from "react-multi-carousel";
-import CardItem from "../../components/CardItem";
 import "react-multi-carousel/lib/styles.css";
+import CardItem from "../CardItem";
 
-const CarouselSection = () => {
+export default function CarouselSection({ posts }: { posts: Post[] }) {
   return (
     <Carousel
-      ssr
       infinite
+      autoPlay
       partialVisible
+      itemClass="m-2"
       responsive={{
         desktop: {
           breakpoint: { max: 3000, min: 1024 },
@@ -17,17 +19,17 @@ const CarouselSection = () => {
         },
         tablet: {
           breakpoint: { max: 1024, min: 464 },
-          items: 2,
+          items: 3,
         },
         mobile: {
           breakpoint: { max: 464, min: 0 },
-          items: 1,
+          items: 2,
         },
       }}
     >
-      <span></span>
+      {posts.map((post) => (
+        <CardItem key={post.path} post={post} />
+      ))}
     </Carousel>
   );
-};
-
-export default CarouselSection;
+}
