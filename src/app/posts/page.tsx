@@ -1,37 +1,13 @@
-"use client";
-
-import PostSection from "@/components/PostSection";
+import FilteredPosts from "@/components/FilteredPosts";
+import { getAllPosts } from "@/service/posts";
 import { useState } from "react";
 
-export default function Posts() {
-  const [selectedCategory, setSelectedCategory] = useState("all");
-  const categoryArr = [
+export default async function Posts() {
+  const posts = await getAllPosts();
+  const categories = [
     "All posts",
-    "my story",
-    "frontend",
-    "backend",
-    "javascript",
+    ...new Set(posts.map((post) => post.category)),
   ];
 
-  return (
-    <section className="flex mb-5">
-      {/* <PostSection category={selectedCategory} /> */}
-      <article className="mx-4">
-        <div className="flex flex-col items-center">
-          <h3 className="font-bold border-b-2 border-slate-800 mb-3">
-            Category
-          </h3>
-          {categoryArr.map((category) => (
-            <span
-              key={category}
-              className="font-semibold text-neutral-800 cursor-pointer"
-              onClick={() => setSelectedCategory(category)}
-            >
-              {category}
-            </span>
-          ))}
-        </div>
-      </article>
-    </section>
-  );
+  return <FilteredPosts posts={posts} categories={categories} />;
 }
