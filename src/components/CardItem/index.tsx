@@ -2,7 +2,7 @@ import { Post } from "@/service/posts";
 import Image from "next/image";
 import Link from "next/link";
 
-const CardItem = ({ post }: { post: Post }) => {
+export default function CardItem({ post }: { post: Post }) {
   if (!post) return <div></div>;
   const { title, description, path, category, date } = post;
   return (
@@ -32,6 +32,4 @@ const CardItem = ({ post }: { post: Post }) => {
       </article>
     </Link>
   );
-};
-
-export default CardItem;
+}

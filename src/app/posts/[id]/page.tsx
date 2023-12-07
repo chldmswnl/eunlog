@@ -1,5 +1,5 @@
+import MarkdownViewer from "@/components/MarkdownViewer";
 import { getSelectedPostDate } from "@/service/posts";
-import Markdown from "react-markdown";
 
 export default async function Posts({
   params: { id },
@@ -7,11 +7,12 @@ export default async function Posts({
   params: { id: string };
 }) {
   const postMarkup = await getSelectedPostDate(id);
-  const { title, content } = postMarkup;
+  const { title, content, description } = postMarkup;
   return (
     <section className="w-full p-5">
-      <h1 className="font-bold mb-10 block text-2xl">{title}</h1>
-      <Markdown>{content}</Markdown>
+      <h1 className="font-bold block text-3xl mb-2">{title}</h1>
+      <h3 className="font-bold text-xl mb-4">{description}</h3>
+      <MarkdownViewer content={content} />
     </section>
   );
 }
