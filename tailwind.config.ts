@@ -5,7 +5,7 @@ const config: Config = {
   theme: {
     extend: {
       backgroundColor: {
-        footer: "#404447",
+        main: "#404447",
       },
     },
   },

@@ -13,14 +13,8 @@ export default function Hero() {
           height={250}
           priority
         />
-        <h2 className="text-2xl font-bold">{"Hello, I'm Eunji 🚀"}</h2>
-        <h3 className="text-xl font-bold">Front-end developer in Korea</h3>
-        <Link
-          href={"/contact"}
-          className="p-2 bg-amber-500 text-white font-semibold rounded-xl"
-        >
-          Contact me
-        </Link>
+        <h2 className="text-2xl font-bold">{"최은지, Eunji Choi 🚀"}</h2>
+        <h3 className="text-xl font-bold">Front-end developer</h3>
       </div>
     </section>
   );
