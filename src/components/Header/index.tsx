@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="flex justify-between p-3">
+    <header className="flex justify-between p-6">
       <Link href="/">
         <h1 className="font-bold text-4xl">Eunlog</h1>
       </Link>
@@ -11,9 +11,7 @@ export default function Header() {
         style={{ color: "#535F70" }}
       >
         <Link href={"/"}>Home</Link>
-        <Link href={"/about"}>About</Link>
         <Link href={"/posts"}>Posts</Link>
-        <Link href={"/contact"}>Contact</Link>
       </nav>
     </header>
   );
