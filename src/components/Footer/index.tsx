@@ -1,9 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="h-24 bg-stone-200 flex items-end p-5">
-      <span className="font-bold text-neutral-400">
-        Eunji choi, All rights reserved
-      </span>
+    <footer className="bg-footer flex justify-center p-20">
+      <span className="font-bold text-white">© 2024 Eunlog</span>
     </footer>
   );
 }
