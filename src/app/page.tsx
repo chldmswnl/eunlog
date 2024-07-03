@@ -1,7 +1,9 @@
+import ProfileSection from '@/components/ProfileSection'
+
 export default function PostList() {
   return (
     <section>
-      <span>Post list page</span>
+      <ProfileSection />
     </section>
   )
 }
