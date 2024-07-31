@@ -5,6 +5,8 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import rehypePrettyCode from 'rehype-pretty-code'
 import remarkGfm from 'remark-gfm'
 import TitleSection from './components/TitleSection'
+import RecommendPostSection from './components/RecommendPostSection'
+import Giscus from '@/components/Giscus'
 
 export default async function Post({
   params: { id },
@@ -16,7 +18,7 @@ export default async function Post({
   return (
     <section>
       <TitleSection metaData={metadata} />
-      <div className="prose">
+      <div className="prose mb-32">
         <MDXRemote
           source={content}
           options={{
@@ -38,7 +40,8 @@ export default async function Post({
           }}
         />
       </div>
-      <Button />
+      <Giscus />
+      <RecommendPostSection />
     </section>
   )
 }
