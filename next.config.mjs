@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {}
 
-export default nextConfig;
+// Merge MDX config with Next.js config
+export default nextConfig
