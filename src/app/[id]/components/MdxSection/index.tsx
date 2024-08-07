@@ -5,7 +5,7 @@ import remarkGfm from 'remark-gfm'
 
 export default function MdxSection({ content }: { content: string }) {
   return (
-    <div className="prose mb-32">
+    <div className="prose mb-32 max-w-full">
       <MDXRemote
         source={content}
         options={{
