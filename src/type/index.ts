@@ -1,5 +1,5 @@
 export interface PostMetadataType {
-  id: number
+  id: string
   title: string
   desc: string
   date: string

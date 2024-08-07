@@ -6,7 +6,7 @@ import path from 'path'
 export const getPostList = async () => {
   const mdxList: PostMetadataType[] = []
   const dir = path.join(process.cwd(), 'src/data')
-  const files = await fs.readdirSync(dir)
+  const files = fs.readdirSync(dir)
 
   const mdxFiles = files.filter((file) => file.endsWith('.mdx'))
 
