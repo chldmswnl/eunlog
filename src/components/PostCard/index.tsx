@@ -1,7 +1,7 @@
-import { Post } from '@/type'
+import { PostMetadataType } from '@/type'
 import Link from 'next/link'
 
-export default function PostCard({ id, title, desc, date }: Post) {
+export default function PostCard({ id, title, desc, date }: PostMetadataType) {
   return (
     <Link href={`/${id}`}>
       <article className="flex w-full flex-col py-3">
