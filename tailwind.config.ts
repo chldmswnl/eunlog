@@ -17,6 +17,8 @@ const config = {
         pretendard: ['Pretendard'],
       },
       colors: {
+        point_1: '#E38AA2',
+        point_2: '#F5C5CC',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
